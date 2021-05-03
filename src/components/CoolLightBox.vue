@@ -24,7 +24,7 @@
               <path d="M6.5 5.4v13.2l11-6.6z"></path>
             </svg>
 
-            <img :src="itemThumb(getItemSrc(itemIndex), itemIndex)" alt="" />
+            <img v-if="showThumbs" :src="itemThumb(getItemSrc(itemIndex), itemIndex)" alt="" />
           </button>
         </div>
       </div>
@@ -1136,7 +1136,7 @@ export default {
 
       const item = this.items[imgIndex]
       if(this.checkIfIsObject(imgIndex)) {
-        return item.srcName
+        return item[this.srcName]
       }
 
       return item
@@ -1149,7 +1149,7 @@ export default {
 
       const item = this.items[imgIndex]
       if(this.checkIfIsObject(imgIndex)) {
-        return item.srcSetName
+        return item[this.srcSetName]
       }
 
       return null
@@ -1187,7 +1187,7 @@ export default {
       }
 
       const item = this.items[imgIndex]
-      if(this.checkIfIsObject(imgIndex)) {
+      if(this.checkIfIsObject(imgIndex) && item.srcThumb) {
         return item.srcThumb
       } 
 
@@ -1210,7 +1210,7 @@ export default {
 
         //item type is specified, so return it
         if (item[this.srcMediaType]) {
-          return item.srcMediaType
+          return item[this.srcMediaType]
         }
       }
     
