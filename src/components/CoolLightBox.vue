@@ -2069,7 +2069,7 @@ $breakpoints: (
     transition: none;
     background-color: #ddd;
     scrollbar-width: thin;
-    scrollbar-color: #fa4242 rgba(175, 175, 175, 0.9);
+    scrollbar-color: var(--cool-lightbox-color) rgba(175, 175, 175, 0.9);
     @include breakpoint(phone) {
       transition: all .3s ease;
     }
@@ -2082,7 +2082,7 @@ $breakpoints: (
       height: 0px;
     }
     &::-webkit-scrollbar-thumb {
-      background: #fa4242;
+      background: var(--cool-lightbox-color);
       border: 0px none #ffffff;
       border-radius: 50px;
     }
@@ -2137,7 +2137,7 @@ $breakpoints: (
           transition: all .3s ease;
           position: absolute;
           visibility: hidden;
-          border: 3px solid #fa4242;
+          border: 3px solid var(--cool-lightbox-color);
         }
         img {
           width: 100%;
@@ -2572,7 +2572,7 @@ $breakpoints: (
     animation: cool-lightbox-rotate 1s linear infinite;
     background: transparent;
     border: 4px solid #888;
-    border-bottom-color: #fff;
+    border-bottom-color: var(--cool-lightbox-color);
     border-radius: 50%;
     height: 50px;
     opacity: .7;
